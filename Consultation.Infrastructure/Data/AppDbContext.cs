@@ -1,6 +1,7 @@
 ﻿using Consultation.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,8 @@ namespace Consultation.Infrastructure.Data
             //    "MultipleActiveResultSets=False;" +
             //    "Encrypt=True;" +
             //    "TrustServerCertificate=False;Connection Timeout=30;");
-            base.OnConfiguring(optionsBuilder);
+
+           optionsBuilder.ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {

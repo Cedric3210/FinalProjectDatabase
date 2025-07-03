@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Consultation.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250702131921_CreateTable")]
-    partial class CreateTable
+    [Migration("20250703081842_CreateDatabase")]
+    partial class CreateDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -452,6 +452,62 @@ namespace Consultation.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "273F528F-5330-411F-9C6B-01543D6249C3",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b",
+                            Email = "MyStudentAccount.550200@umindanao.edu.ph",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MYSTUDENTACCOUNT.550200@UMINDANAO.EDU.PH",
+                            NormalizedUserName = "MYSTUDENTACCOUNT",
+                            PasswordHash = "AQAAAAIAAYagAAAAEI76PdJ41v+Y6dbcvCaz1+EjFCpzLKUC0WxS0v25cDHJGOSLKNR4Gl5+pPWd3YfKRw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
+                            TwoFactorEnabled = false,
+                            UMID = "1234",
+                            UserName = "MyStudentAccount",
+                            UserType = 0
+                        },
+                        new
+                        {
+                            Id = "53D8F920-EBEC-4DF3-8C53-21F6D123F0D9",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b",
+                            Email = "MyFacultyaccount.550200@umindanao.edu.ph",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MYFACULTYACCOUNT.550200@UMINDANAO.EDU.PH",
+                            NormalizedUserName = "MYFACULTYACCOUNT",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOVY7f1890/9SVUvXTY1wguwYKZBUbE1zGSoh7u2PiwrXVOGCPNeOwt/DpYRN+hdDg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
+                            TwoFactorEnabled = false,
+                            UMID = "3210",
+                            UserName = "MyFacultyaccount",
+                            UserType = 1
+                        },
+                        new
+                        {
+                            Id = "6B187E9D-FD71-4F1D-AFDF-EA1D91E818EF",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b",
+                            Email = "MyAdminaccount.550200@umindanao.edu.ph",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MYADMINACCOUNT.550200@UMINDANAO.EDU.PH",
+                            NormalizedUserName = "MYADMINACCOUNT",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPtu8MsiGnp8xvGp0MASvhxak+j6tWRKLs2es1DnJ2uCERyGKeNFmy1KiTw+QFWTKQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
+                            TwoFactorEnabled = false,
+                            UMID = "4445",
+                            UserName = "MyAdminaccount",
+                            UserType = 2
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

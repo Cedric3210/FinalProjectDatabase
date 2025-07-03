@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Consultation.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateTable : Migration
+    public partial class CreateDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -436,6 +438,16 @@ namespace Consultation.Infrastructure.Migrations
                         principalTable: "Students",
                         principalColumn: "StudentID",
                         onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UMID", "UserName", "UserType" },
+                values: new object[,]
+                {
+                    { "273F528F-5330-411F-9C6B-01543D6249C3", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyStudentAccount.550200@umindanao.edu.ph", true, false, null, "MYSTUDENTACCOUNT.550200@UMINDANAO.EDU.PH", "MYSTUDENTACCOUNT", "AQAAAAIAAYagAAAAEI76PdJ41v+Y6dbcvCaz1+EjFCpzLKUC0WxS0v25cDHJGOSLKNR4Gl5+pPWd3YfKRw==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "1234", "MyStudentAccount", 0 },
+                    { "53D8F920-EBEC-4DF3-8C53-21F6D123F0D9", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyFacultyaccount.550200@umindanao.edu.ph", true, false, null, "MYFACULTYACCOUNT.550200@UMINDANAO.EDU.PH", "MYFACULTYACCOUNT", "AQAAAAIAAYagAAAAEOVY7f1890/9SVUvXTY1wguwYKZBUbE1zGSoh7u2PiwrXVOGCPNeOwt/DpYRN+hdDg==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "3210", "MyFacultyaccount", 1 },
+                    { "6B187E9D-FD71-4F1D-AFDF-EA1D91E818EF", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyAdminaccount.550200@umindanao.edu.ph", true, false, null, "MYADMINACCOUNT.550200@UMINDANAO.EDU.PH", "MYADMINACCOUNT", "AQAAAAIAAYagAAAAEPtu8MsiGnp8xvGp0MASvhxak+j6tWRKLs2es1DnJ2uCERyGKeNFmy1KiTw+QFWTKQ==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "4445", "MyAdminaccount", 2 }
                 });
 
             migrationBuilder.CreateIndex(
