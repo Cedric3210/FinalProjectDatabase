@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Consultation.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDatabase : Migration
+    public partial class CreateTableWithSeeder : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -411,7 +411,9 @@ namespace Consultation.Infrastructure.Migrations
                 name: "EnrolledCourse",
                 columns: table => new
                 {
-                    EnrolledCourseID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    EnrolledCourseID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CourseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CourseCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SchoolYearID = table.Column<int>(type: "int", nullable: false),
                     StudentID = table.Column<int>(type: "int", nullable: false),
@@ -445,9 +447,24 @@ namespace Consultation.Infrastructure.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UMID", "UserName", "UserType" },
                 values: new object[,]
                 {
-                    { "273F528F-5330-411F-9C6B-01543D6249C3", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyStudentAccount.550200@umindanao.edu.ph", true, false, null, "MYSTUDENTACCOUNT.550200@UMINDANAO.EDU.PH", "MYSTUDENTACCOUNT", "AQAAAAIAAYagAAAAEI76PdJ41v+Y6dbcvCaz1+EjFCpzLKUC0WxS0v25cDHJGOSLKNR4Gl5+pPWd3YfKRw==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "1234", "MyStudentAccount", 0 },
-                    { "53D8F920-EBEC-4DF3-8C53-21F6D123F0D9", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyFacultyaccount.550200@umindanao.edu.ph", true, false, null, "MYFACULTYACCOUNT.550200@UMINDANAO.EDU.PH", "MYFACULTYACCOUNT", "AQAAAAIAAYagAAAAEOVY7f1890/9SVUvXTY1wguwYKZBUbE1zGSoh7u2PiwrXVOGCPNeOwt/DpYRN+hdDg==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "3210", "MyFacultyaccount", 1 },
-                    { "6B187E9D-FD71-4F1D-AFDF-EA1D91E818EF", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyAdminaccount.550200@umindanao.edu.ph", true, false, null, "MYADMINACCOUNT.550200@UMINDANAO.EDU.PH", "MYADMINACCOUNT", "AQAAAAIAAYagAAAAEPtu8MsiGnp8xvGp0MASvhxak+j6tWRKLs2es1DnJ2uCERyGKeNFmy1KiTw+QFWTKQ==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "4445", "MyAdminaccount", 2 }
+                    { "0A52E15B-95E6-40FE-9110-9A44817BFF39", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "josephcruz.8998@umindanao.edu.ph", true, false, null, "JOSEPHCRUZ.8998@UMINDANAO.EDU.PH", "JOSEPHCRUZ", "AQAAAAIAAYagAAAAEH4I/I4qeD+Y28XC0Izk7IhRUoJCdgydITVe0neN8PlSKhWxeDK8HXO9hvs6Ny5K9A==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "8998", "JosephCruz", 1 },
+                    { "1226920F-9508-44B3-845A-ABABBBCBCF5D", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "mariasantos.6850@umindanao.edu.ph", true, false, null, "MARIASANTOS.6850@UMINDANAO.EDU.PH", "MARIASANTOS", "AQAAAAIAAYagAAAAEDJ8NNskGurN52olB502FZAJFdWzeAC5XL0He7298jaUmGtELCE61umHqzcZMt10bA==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "6850", "MariaSantos", 1 },
+                    { "273F528F-5330-411F-9C6B-01543D6249C3", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyStudentAccount.550200@umindanao.edu.ph", true, false, null, "MYSTUDENTACCOUNT.550200@UMINDANAO.EDU.PH", "MYSTUDENTACCOUNT", "AQAAAAIAAYagAAAAEKadJU/M/fapx3hmZwubuGo2bBDgLQ76ComEUa8ZVEsP5dSrjXJNqQ8M32PtUS7MyA==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "1234", "MyStudentAccount", 1 },
+                    { "53D8F920-EBEC-4DF3-8C53-21F6D123F0D9", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyFacultyaccount.550200@umindanao.edu.ph", true, false, null, "MYFACULTYACCOUNT.550200@UMINDANAO.EDU.PH", "MYFACULTYACCOUNT", "AQAAAAIAAYagAAAAEFiY5yxNbQpQKyl1cgm4e8hET6YlzCl6XDKjqQrD/3r9Ums0uCThVmVc2ZbgqF3fbw==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "3210", "MyFacultyaccount", 2 },
+                    { "59CF8531-68E4-466B-BAEC-45305FE16A14", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "marklopez.9241@umindanao.edu.ph", true, false, null, "MARKLOPEZ.9241@UMINDANAO.EDU.PH", "MARKLOPEZ", "AQAAAAIAAYagAAAAEHjnm8GpXWPFGLBymeDjh6wYwmcFJBazFg8eDeXbgvQhZdPhcMVBSFID+I0IOw7mLQ==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "9241", "MarkLopez", 1 },
+                    { "6B187E9D-FD71-4F1D-AFDF-EA1D91E818EF", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "MyAdminaccount.550200@umindanao.edu.ph", true, false, null, "MYADMINACCOUNT.550200@UMINDANAO.EDU.PH", "MYADMINACCOUNT", "AQAAAAIAAYagAAAAENh9d+kK9Hidhwvmdq5ybRMkOCXMoqvNC0lJSdbB4GCwp2f12WsW6m7fStIg832EAA==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "4445", "MyAdminaccount", 3 },
+                    { "78B4AF2A-672F-43C5-B819-5F0B407B7187", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "angelicagarcia.7971@umindanao.edu.ph", true, false, null, "ANGELICAGARCIA.7971@UMINDANAO.EDU.PH", "ANGELICAGARCIA", "AQAAAAIAAYagAAAAEMXdVVIfWJCf2DLL62VXgwib/Ljmgc7tF4wxTpZVT+XPlLy7fTly0erEUP+aFYRAiQ==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "7971", "AngelicaGarcia", 1 },
+                    { "D0B26692-E380-4374-985F-239B56D06C20", 0, "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b", "UndoyBagyo.550200@umindanao.edu.ph", true, false, null, "UNDOYBAGYO.550200@UMINDANAO.EDU.PH", "UNDOYBAGYOUV63", "AQAAAAIAAYagAAAAENowKWHzGcfU+a6/iOsn1wp/0OKExfqNWvQQlMMmIxm278M+c/p86m7hrVmU5MQCUA==", null, false, "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4", false, "547343", "UndoyBagyoUV63", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Department",
+                columns: new[] { "DepartmentID", "DepartmentName", "Description" },
+                values: new object[,]
+                {
+                    { 1, "CASE", "College of Arts and Sciences Education" },
+                    { 2, "CBAE", "College of Business Administration Education" },
+                    { 3, "CEE", "College of Engineering Education" }
                 });
 
             migrationBuilder.CreateIndex(

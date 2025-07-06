@@ -1,6 +1,5 @@
 ﻿using Consultation.Domain;
 using Consultation.Infrastructure.Data;
-using Enum;
 using FlutterAPI.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

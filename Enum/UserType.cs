@@ -8,8 +8,8 @@ namespace Consultation.Domain.Enum
 {
     public enum UserType
     {
-       Student,
-       Faculty,
-       Admin    
+       Student =1,
+       Faculty =2,
+       Admin =3  
     }
 }

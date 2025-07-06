@@ -1,7 +1,7 @@
 ﻿using Consultation.Domain;
 using Consultation.Domain.Enum;
 using Consultation.Infrastructure.Data;
-using Enum;
+
 using FlutterAPI.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

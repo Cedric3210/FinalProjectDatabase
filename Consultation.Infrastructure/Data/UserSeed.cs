@@ -12,68 +12,96 @@ namespace Consultation.Infrastructure.Data
 {
     public class UserSeed
     {
-        private static string UserIDStudent = "273F528F-5330-411F-9C6B-01543D6249C3";
-        private static string UserIDFacutly = "53D8F920-EBEC-4DF3-8C53-21F6D123F0D9";
-        private static string UserIDAdmin = "6B187E9D-FD71-4F1D-AFDF-EA1D91E818EF";
-
-
-       public static void SeedUser(ModelBuilder Builder)
+        public static Users UserSeeder(string id, string umid, string userName, string email, string password, Domain.Enum.UserType userType)
         {
-            var passwordHasher = new PasswordHasher<Users>();
-
-            var studentUser = new Users
+            var Users = new Users
             {
-                UMID = "1234",
-                Id = UserIDStudent,
-                UserName = "MyStudentAccount",
-                UserType = Domain.Enum.UserType.Student,
+                Id = id,
+                UserName = userName,
+                Email = email,
+                NormalizedUserName = userName.ToUpper(),
+                NormalizedEmail = email.ToUpper(),
+                EmailConfirmed = true,
+                PasswordHash = new PasswordHasher<Users>().HashPassword(null, password),
                 SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                 ConcurrencyStamp = "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b",
-                Email = "MyStudentAccount.550200@umindanao.edu.ph",
-                NormalizedEmail = "MYSTUDENTACCOUNT.550200@UMINDANAO.EDU.PH",
-                NormalizedUserName = "MYSTUDENTACCOUNT",
-                EmailConfirmed = true
+                UserType = userType,
+                UMID = umid
             };
+            return Users;
+        }
 
-            
-            studentUser.PasswordHash = passwordHasher.HashPassword(studentUser, "MyStudent123!");
-            Builder.Entity<Users>().HasData(studentUser);
+        public static Department DepartmentSeeder(int departmentId, string departmentName, string description)
+        {
 
-            var facultyUser = new Users
+            var Department = new Department
             {
-                UMID = "3210",
-                Id = UserIDFacutly,
-                UserName = "MyFacultyaccount",
-                UserType = Domain.Enum.UserType.Faculty,
-                SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
-                ConcurrencyStamp = "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b",
-                Email = "MyFacultyaccount.550200@umindanao.edu.ph",
-                NormalizedEmail = "MYFACULTYACCOUNT.550200@UMINDANAO.EDU.PH",
-                NormalizedUserName = "MYFACULTYACCOUNT",
-                EmailConfirmed = true
+                DepartmentID = departmentId,
+                DepartmentName = departmentName,
+                Description = description
             };
-            
-            facultyUser.PasswordHash = passwordHasher.HashPassword(facultyUser, "MyFaculty123!");
-            Builder.Entity<Users>().HasData(facultyUser);
 
-            var adminUser = new Users
+            return Department;
+        }
+
+        public static Program ProgramSeeder(int programId, string programName, string description, int departmentId)
+        {
+            var Program = new Program
             {
-                UMID = "4445",
-                Id = UserIDAdmin,
-                UserName = "MyAdminaccount",
-                UserType = Domain.Enum.UserType.Admin,
-                SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
-                ConcurrencyStamp = "8d3ef0d9-b045-4b8f-a18f-15f2cbfa219b",
-                Email = "MyAdminaccount.550200@umindanao.edu.ph",
-                NormalizedEmail = "MYADMINACCOUNT.550200@UMINDANAO.EDU.PH",
-                NormalizedUserName = "MYADMINACCOUNT",
-                EmailConfirmed = true
+                ProgramID = programId,
+                ProgramName = programName,
+                Description = description,
+                DepartmentID = departmentId
             };
-           
-            adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, "MyAdmin123!");
-            Builder.Entity<Users>().HasData(adminUser);
+            return Program;
+        }
 
+        public static SchoolYear schoolYearSeeder(int schoolYearId, string Year1,string Year2, Domain.Enum.Semester semester, Domain.Enum.SchoolYearStatus schoolYearStatus)
+        {
+            var SchoolYear = new SchoolYear
+            {
+                SchoolYearID = schoolYearId,
+                SchoolYearStatus = schoolYearStatus,
+                Semester = semester,
+                Year1 = Year1,
+                Year2 = Year2
 
-        }  
+            };
+            return SchoolYear;
+        }
+
+        public static EnrolledCourse EnrollCourseSeeder(string courseName,string courseCode,int schoolYearID,int studentID,int facultyID)
+        {
+            var EnrolledCourse = new EnrolledCourse
+            {
+                CourseCode = courseCode,
+                CourseName = courseName,
+                StudentID = studentID,
+                FacultyID = facultyID,
+                SchoolYearID = schoolYearID
+            };
+            return EnrolledCourse;
+        }
+
+        //public static Student StudentSeeder(int id,string studentName,string StudentUMID,string email,int programID)
+        //{
+        //      var student = new Student
+        //      {
+        //          StudentName = studentName,
+        //          StudentUMID = StudentUMID,
+        //          Email = email,
+        //          ProgramID = programID,
+        //          StudentID = id
+        //      };
+        //   return student;
+        // }
     }
 }
+
+
+
+
+
+
+
+

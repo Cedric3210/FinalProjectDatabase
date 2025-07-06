@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enum
+namespace Consultation.Domain.Enum
 {
     public enum Semester
     {
         //[Display(Name="First Semester")]
-        Semester1, 
-        Semester2,
-        Summer
+        Semester1 =1, 
+        Semester2 = 2,
+        Summer = 3
 
     }
 }

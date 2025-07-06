@@ -25,13 +25,5 @@ namespace Consultation.Domain
         public int Priority { get; set; }
 
         public string Notify { get; set; }
-        
-        //Add Category 
-
-        //Add Content 
-
-
-
-        
     }
 }

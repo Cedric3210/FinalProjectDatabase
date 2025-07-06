@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enum
+namespace Consultation.Domain.Enum
 {
     public enum SchoolYearStatus
     {
-        Current,
-        Done
+        Current =1,
+        Done =2
     }
 }
