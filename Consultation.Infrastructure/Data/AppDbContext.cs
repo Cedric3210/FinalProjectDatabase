@@ -88,15 +88,16 @@ namespace Consultation.Infrastructure.Data
                 DatabaseSeeder.EnrollCourseSeeder(1,"Engineering Calculus 1", "CEE101", 1, 1, 1),
                 DatabaseSeeder.EnrollCourseSeeder(2,"PHYSICS 1 FOR ENGINEERS (CALCULUS BASED)", "CEE102/L", 1, 1, 2),
                 DatabaseSeeder.EnrollCourseSeeder(3,"Statics of Rigid Bodies", "CEE108", 1, 1, 2),
+                DatabaseSeeder.EnrollCourseSeeder(4,"Statics of Rigid Bodies", "CEE108", 1, 2, 2),
              
 
                 //Enrolled courses in second semester
                 DatabaseSeeder.EnrollCourseSeeder(5,"Engineering Calculus 2", "CEE103", 2, 1, 2),
-                DatabaseSeeder.EnrollCourseSeeder(4,"Thermodyanmics 2", "CEE101", 2, 1, 1),
-                 DatabaseSeeder.EnrollCourseSeeder(6,"Data Structure and Algorithms", "CPE221/L", 2, 1, 2),
+                DatabaseSeeder.EnrollCourseSeeder(6,"Thermodyanmics 2", "CEE101", 2, 1, 1),
+                 DatabaseSeeder.EnrollCourseSeeder(7,"Data Structure and Algorithms", "CPE221/L", 2, 1, 2),
 
                 //Enrolled courses in summer
-                DatabaseSeeder.EnrollCourseSeeder(7,"Differential Equation", "CEE104", 3, 1, 2),
+                DatabaseSeeder.EnrollCourseSeeder(8,"Differential Equation", "CEE104", 3, 1, 2),
 
                 
             };
@@ -105,6 +106,8 @@ namespace Consultation.Infrastructure.Data
             {
                 DatabaseSeeder.StudentSeeder(1,"550200","Cedric Setimo","CedricSetimo.550200@umindanao.edu.ph",3,1,
                 "273F528F-5330-411F-9C6B-01543D6249C3"),
+                 DatabaseSeeder.StudentSeeder(2,"547343","Ellaine Musni","EllaineMusni.550200@umindanao.edu.ph",3,1,
+                "D0B26692-E380-4374-985F-239B56D06C20"),
             };
 
             var faculty = new List<Faculty>()

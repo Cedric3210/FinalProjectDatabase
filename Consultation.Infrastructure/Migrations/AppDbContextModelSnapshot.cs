@@ -268,6 +268,15 @@ namespace Consultation.Infrastructure.Migrations
                         },
                         new
                         {
+                            EnrolledCourseID = 4,
+                            CourseCode = "CEE108",
+                            CourseName = "Statics of Rigid Bodies",
+                            FacultyID = 2,
+                            SchoolYearID = 1,
+                            StudentID = 2
+                        },
+                        new
+                        {
                             EnrolledCourseID = 5,
                             CourseCode = "CEE103",
                             CourseName = "Engineering Calculus 2",
@@ -277,7 +286,7 @@ namespace Consultation.Infrastructure.Migrations
                         },
                         new
                         {
-                            EnrolledCourseID = 4,
+                            EnrolledCourseID = 6,
                             CourseCode = "CEE101",
                             CourseName = "Thermodyanmics 2",
                             FacultyID = 1,
@@ -286,7 +295,7 @@ namespace Consultation.Infrastructure.Migrations
                         },
                         new
                         {
-                            EnrolledCourseID = 6,
+                            EnrolledCourseID = 7,
                             CourseCode = "CPE221/L",
                             CourseName = "Data Structure and Algorithms",
                             FacultyID = 2,
@@ -295,7 +304,7 @@ namespace Consultation.Infrastructure.Migrations
                         },
                         new
                         {
-                            EnrolledCourseID = 7,
+                            EnrolledCourseID = 8,
                             CourseCode = "CEE104",
                             CourseName = "Differential Equation",
                             FacultyID = 2,
@@ -564,6 +573,16 @@ namespace Consultation.Infrastructure.Migrations
                             StudentName = "Cedric Setimo",
                             StudentUMID = "550200",
                             UsersID = "273F528F-5330-411F-9C6B-01543D6249C3"
+                        },
+                        new
+                        {
+                            StudentID = 2,
+                            Email = "EllaineMusni.550200@umindanao.edu.ph",
+                            ProgramID = 3,
+                            SchoolYearID = 1,
+                            StudentName = "Ellaine Musni",
+                            StudentUMID = "547343",
+                            UsersID = "D0B26692-E380-4374-985F-239B56D06C20"
                         });
                 });
 
@@ -649,7 +668,7 @@ namespace Consultation.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CEDRICSETIMO.550200@UMINDANAO.EDU.PH",
                             NormalizedUserName = "CEDRIC SETIMO",
-                            PasswordHash = "AQAAAAIAAYagAAAAEE3kWF/0rt5O3H8Xyo0lFYLKhcz9w0reHqf/mVlqQgbQU67JfKFqAAEL2JJAsIHQbA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELbKsQKa34fI17GQ/jJSlxKsnWaOTsfxI1L3FjJmbeAYyhkNIcaSTW0vSELQuxKayw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                             TwoFactorEnabled = false,
@@ -667,7 +686,7 @@ namespace Consultation.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "REYMATEO.550200@UMINDANAO.EDU.PH",
                             NormalizedUserName = "REY MATEO",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDP7yU8Q1nXLKI2RCH+FRJlIooI4osHdnr6UwS1h7ivbsqWKhDsh6plsF1eL2Jh6NQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMco9RI7YneDKQgKXqyAAs1YwQAWlSqbbzmAjjeytt/lhwpxzkPYTKZA/MwUsukURA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                             TwoFactorEnabled = false,
@@ -685,7 +704,7 @@ namespace Consultation.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "RAINEISID.550200@UMINDANAO.EDU.PH",
                             NormalizedUserName = "RAINE ISID",
-                            PasswordHash = "AQAAAAIAAYagAAAAEH3kYY5dVm1SW4H7QF7KSwa3mrdu+mPEDDwX/o1GuY/3JvdGT+wGB5DSscHN07Mk+A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAoez450Xh/EVhdpQASC9VyC347ESWzcZoZtddx9gQ2+5AFwR3E9FpjhU+PZIMwEfA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                             TwoFactorEnabled = false,
@@ -703,7 +722,7 @@ namespace Consultation.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ELLAINEMUSNI.550200@UMINDANAO.EDU.PH",
                             NormalizedUserName = "ELLAINE MUSNI",
-                            PasswordHash = "AQAAAAIAAYagAAAAEE88RwsxEqGma+4ck3Wx/7aKVhf7+41CD/14dO1CNRPCO0Wh8D47AuZPBxOrLe+TfA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBLnDh2Jcs+tEmJmQUDV3QxMQW58smNxPn/W9x8yNjb0kujB7vU12310qvaK3hYmdA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                             TwoFactorEnabled = false,
@@ -721,7 +740,7 @@ namespace Consultation.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "REGGIESOYLON.6850@UMINDANAO.EDU.PH",
                             NormalizedUserName = "REGGIE SOYLON",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBUpyKftq6j5yfJ1g6cXTcurnpVrBxEc/yuXE891SSHMtgOsSG5SDe+BA4/ZSzJ3fw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPmRNerKzv7/4Hyqcez0BtVfYCiDHEmFdfNg1RIj/rKilp7FNNU0tLz5dz0RkAa1Fg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                             TwoFactorEnabled = false,
@@ -739,7 +758,7 @@ namespace Consultation.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CHELEYBALSOMO.8998@UMINDANAO.EDU.PH",
                             NormalizedUserName = "CHELEY BALSOMO",
-                            PasswordHash = "AQAAAAIAAYagAAAAECDzhsCsYc5f+2NDjvJoi3vXXZ2Wlg8Lujy6JBksRt9rB0Q1kWqwJ+ZS8ssaPR/grw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENhOziLJgeq9CatDfgL1qoocfnbCa1YZc0JesLGjI5VSbk1bfnQJywwUcYNQosQdhQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                             TwoFactorEnabled = false,
@@ -757,7 +776,7 @@ namespace Consultation.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JEANELLELABSAN.7971@UMINDANAO.EDU.PH",
                             NormalizedUserName = "JEANELLE LABSAN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGvB2f/mUaWEMnn2iKVTpgLkHHAzR38F7PuZZ0NGQTCwH/fY0kwEgLPAzvQVUPuC1w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGtTUIDHRvyM65WP9RtBFMQT8WqFwUTyd6SSxKqIFTrkGcv6aVUgTLrs6IZt32ghjA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                             TwoFactorEnabled = false,
@@ -775,7 +794,7 @@ namespace Consultation.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CHRISTOPHERDESTAJO.9241@UMINDANAO.EDU.PH",
                             NormalizedUserName = "CHRISTOPHER DESTAJO",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDhBCMR9+eMbI3GqUJIw616my+3iMT86Fm146dESg8JLX/aqsq1ATSLN+F4W2dtrWw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIM4Cf2wY7mLd5Gmtk8L7hKRAH3PUPY5iRW9kWGVGOEvT19EuJZA14cgRVh94CY1HQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5a54c967-0b1f-4c38-bda7-5f94e4c1a3f4",
                             TwoFactorEnabled = false,
