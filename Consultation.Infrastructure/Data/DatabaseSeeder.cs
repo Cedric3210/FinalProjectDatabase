@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Consultation.Infrastructure.Data
 {
-    public class UserSeed
+    public class DatabaseSeeder
     {
         public static Users UserSeeder(string id, string umid, string userName, string email, string password, Domain.Enum.UserType userType)
         {
@@ -70,10 +70,12 @@ namespace Consultation.Infrastructure.Data
             return SchoolYear;
         }
 
-        public static EnrolledCourse EnrollCourseSeeder(string courseName,string courseCode,int schoolYearID,int studentID,int facultyID)
+        public static EnrolledCourse EnrollCourseSeeder(int enrolledCourseID,string courseName,string courseCode,
+            int schoolYearID,int studentID,int facultyID)
         {
             var EnrolledCourse = new EnrolledCourse
             {
+                EnrolledCourseID = enrolledCourseID,
                 CourseCode = courseCode,
                 CourseName = courseName,
                 StudentID = studentID,
@@ -83,18 +85,44 @@ namespace Consultation.Infrastructure.Data
             return EnrolledCourse;
         }
 
-        //public static Student StudentSeeder(int id,string studentName,string StudentUMID,string email,int programID)
-        //{
-        //      var student = new Student
-        //      {
-        //          StudentName = studentName,
-        //          StudentUMID = StudentUMID,
-        //          Email = email,
-        //          ProgramID = programID,
-        //          StudentID = id
-        //      };
-        //   return student;
-        // }
+        public static Student StudentSeeder(int id,string studentUMID,string studentName,string email,
+            int programID,int schoolYear,string userID)
+        {
+            var students = new Student
+            {
+                Email = email,
+                StudentName = studentName,
+                StudentID = id,
+                StudentUMID = studentUMID,
+                ProgramID = programID,
+                SchoolYearID = schoolYear,
+                UsersID = userID
+            };
+
+            return students;
+        }
+
+        public static Faculty FacultySeeder(int facultyID,string facultyUMID,string facultyName
+            ,int schoolYearID,string userID)
+        {
+            var faculty = new Faculty
+            {
+                UsersID = userID,
+                FacultyID = facultyID,
+                FacultyUMID = facultyUMID,
+                FacultyName = facultyName,   
+                SchoolYearID = schoolYearID,
+                //FacultySchedules = facultySchedules, Parameter = List<FacultySchedule> facultySchedules
+                //ConsultationRequests = consultationRequests ,  Parameter = List<ConsultationRequest> consultationRequests,
+
+            };
+            return faculty;
+        }
+
+       
+
+
+
     }
 }
 

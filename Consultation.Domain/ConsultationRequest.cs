@@ -34,6 +34,9 @@ namespace Consultation.Domain
 
         public virtual Student Student { get; set; }
 
+        [ForeignKey(nameof(StudentID))]
+        public int StudentID { get; set; }
+
         [ForeignKey(nameof(FacultyID))]
         public int FacultyID { get; set; }
         public virtual Faculty Faculty { get; set; }

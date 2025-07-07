@@ -32,9 +32,15 @@ namespace Consultation.Domain
 
         //Student to SchoolYear is Many-to-One relationship
 
-        public SchoolYear SchoolYear { get; set; }
+        public virtual SchoolYear SchoolYear { get; set; }
 
-        public Users Users { get; set; }
+        [ForeignKey(nameof(SchoolYearID))]
+        public int SchoolYearID { get; set; }
+
+        public virtual Users Users { get; set; }
+
+        [ForeignKey(nameof(Users))]
+        public string UsersID { get; set; }
 
         public List<EnrolledCourse> EnrolledCourses { get; set; }
     }

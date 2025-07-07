@@ -27,6 +27,8 @@ namespace Consultation.Domain
 
         public List<Faculty> Faculties { get; set; }    
 
+        public List<EnrolledCourse> EnrolledCourses { get; set; }
+
 
     }
 }

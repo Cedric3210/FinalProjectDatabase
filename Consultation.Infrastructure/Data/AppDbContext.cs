@@ -20,6 +20,9 @@ namespace Consultation.Infrastructure.Data
                 : base(options)
         {
         }
+
+        private readonly SchoolYear SummerClass = DatabaseSeeder.schoolYearSeeder(1, "2024", "2025", Domain.Enum.Semester.Semester1, Domain.Enum.SchoolYearStatus.Current);
+              
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Connection to Local SQL Server Database
@@ -43,44 +46,71 @@ namespace Consultation.Infrastructure.Data
         {
             var users = new List<Users>
             {
-            UserSeed.UserSeeder("273F528F-5330-411F-9C6B-01543D6249C3", "1234", "MyStudentAccount", "MyStudentAccount.550200@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student),
-            UserSeed.UserSeeder("53D8F920-EBEC-4DF3-8C53-21F6D123F0D9", "3210", "MyFacultyaccount", "MyFacultyaccount.550200@umindanao.edu.ph", "MyFaculty123!", Domain.Enum.UserType.Faculty),
-            UserSeed.UserSeeder("6B187E9D-FD71-4F1D-AFDF-EA1D91E818EF", "4445", "MyAdminaccount", "MyAdminaccount.550200@umindanao.edu.ph", "MyAdmin123!", Domain.Enum.UserType.Admin),
-            UserSeed.UserSeeder("D0B26692-E380-4374-985F-239B56D06C20", "547343", "UndoyBagyoUV63", "UndoyBagyo.550200@umindanao.edu.ph", "MyAdmin123!", Domain.Enum.UserType.Student),
-            UserSeed.UserSeeder("1226920F-9508-44B3-845A-ABABBBCBCF5D", "6850", "MariaSantos", "mariasantos.6850@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student),
-            UserSeed.UserSeeder("0A52E15B-95E6-40FE-9110-9A44817BFF39", "8998", "JosephCruz", "josephcruz.8998@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student),
-            UserSeed.UserSeeder("78B4AF2A-672F-43C5-B819-5F0B407B7187", "7971", "AngelicaGarcia", "angelicagarcia.7971@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student),
-            UserSeed.UserSeeder("59CF8531-68E4-466B-BAEC-45305FE16A14", "9241", "MarkLopez", "marklopez.9241@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student)
+            DatabaseSeeder.UserSeeder("273F528F-5330-411F-9C6B-01543D6249C3", "550200", "Cedric Setimo", "CedricSetimo.550200@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student),
+            DatabaseSeeder.UserSeeder("53D8F920-EBEC-4DF3-8C53-21F6D123F0D9", "321033", "Rey Mateo", "ReyMateo.550200@umindanao.edu.ph", "MyFaculty123!", Domain.Enum.UserType.Faculty),
+            DatabaseSeeder.UserSeeder("6B187E9D-FD71-4F1D-AFDF-EA1D91E818EF", "444533", "Raine Isid", "RaineIsid.550200@umindanao.edu.ph", "MyAdmin123!", Domain.Enum.UserType.Admin),
+            DatabaseSeeder.UserSeeder("D0B26692-E380-4374-985F-239B56D06C20", "547343", "Ellaine Musni", "EllaineMusni.550200@umindanao.edu.ph", "MyAdmin123!", Domain.Enum.UserType.Student),
+            DatabaseSeeder.UserSeeder("1226920F-9508-44B3-845A-ABABBBCBCF5D", "685043", "Reggie Soylon", "ReggieSoylon.6850@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student),
+            DatabaseSeeder.UserSeeder("0A52E15B-95E6-40FE-9110-9A44817BFF39", "899812", "Cheley Balsomo", "CheleyBalsomo.8998@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student),
+            DatabaseSeeder.UserSeeder("78B4AF2A-672F-43C5-B819-5F0B407B7187", "797132", "Jeanelle Labsan", "JeanelleLabsan.7971@umindanao.edu.ph", "MyFaculty123!", Domain.Enum.UserType.Faculty),
+            DatabaseSeeder.UserSeeder("59CF8531-68E4-466B-BAEC-45305FE16A14", "924132", "Christopher Destajo", "ChristopherDestajo.9241@umindanao.edu.ph", "MyStudent123!", Domain.Enum.UserType.Student)
             };
 
             var departments = new List<Department>
             {
-                UserSeed.DepartmentSeeder(1, "CASE", "College of Arts and Sciences Education"),
-                UserSeed.DepartmentSeeder(2, "CBAE", "College of Business Administration Education"),
-                UserSeed.DepartmentSeeder(3, "CEE", "College of Engineering Education")
+                DatabaseSeeder.DepartmentSeeder(1, "CASE", "College of Arts and Sciences Education"),
+                DatabaseSeeder.DepartmentSeeder(2, "CBAE", "College of Business Administration Education"),
+                DatabaseSeeder.DepartmentSeeder(3, "CEE", "College of Engineering Education")
             };
 
             
             var program = new List<Program>
             {
-                UserSeed.ProgramSeeder(1, "ME", "Mechanical Engineering",3),
-                UserSeed.ProgramSeeder(2, "CE", "Civil Engineering",3),
-                UserSeed.ProgramSeeder(3, "CPE", "Computer Engineering",3),
-                UserSeed.ProgramSeeder(4, "EE", "Electrical Engineering",3),
-                UserSeed.ProgramSeeder(5, "ECE", "Electronics Engineering",3),
+                DatabaseSeeder.ProgramSeeder(1, "ME", "Mechanical Engineering",3),
+                DatabaseSeeder.ProgramSeeder(2, "CE", "Civil Engineering",3),
+                DatabaseSeeder.ProgramSeeder(3, "CPE", "Computer Engineering",3),
+                DatabaseSeeder.ProgramSeeder(4, "EE", "Electrical Engineering",3),
+                DatabaseSeeder.ProgramSeeder(5, "ECE", "Electronics Engineering",3),
             };
 
         
             var schoolYears = new List<SchoolYear>
             {
-                UserSeed.schoolYearSeeder(1,"2024","2025",Domain.Enum.Semester.Semester1,Domain.Enum.SchoolYearStatus.Current),
-                UserSeed.schoolYearSeeder(2,"2024","2025",Domain.Enum.Semester.Semester2,Domain.Enum.SchoolYearStatus.Current),
-                UserSeed.schoolYearSeeder(3,"2024","2025",Domain.Enum.Semester.Summer,Domain.Enum.SchoolYearStatus.Current),
+                DatabaseSeeder.schoolYearSeeder(1,"2024","2025",Domain.Enum.Semester.Semester1,Domain.Enum.SchoolYearStatus.Current),
+                DatabaseSeeder.schoolYearSeeder(2,"2024","2025",Domain.Enum.Semester.Semester2,Domain.Enum.SchoolYearStatus.Current),
+                DatabaseSeeder.schoolYearSeeder(3,"2024","2025",Domain.Enum.Semester.Summer,Domain.Enum.SchoolYearStatus.Current),
             };
 
-            var enrolledCourses = new List<EnrolledCourse>()
+             
+            var enrolledCourses = new List<EnrolledCourse>
             {
-                EnrolledCourse.Seeder(1, 1, 1, 1, "ME101", "Engineering Mechanics", "3", "Lecture", "Monday", "8:00 AM - 9:30 AM", "Room 101"),
+                //Enrolled courses in first semester
+                DatabaseSeeder.EnrollCourseSeeder(1,"Engineering Calculus 1", "CEE101", 1, 1, 1),
+                DatabaseSeeder.EnrollCourseSeeder(2,"PHYSICS 1 FOR ENGINEERS (CALCULUS BASED)", "CEE102/L", 1, 1, 2),
+                DatabaseSeeder.EnrollCourseSeeder(3,"Statics of Rigid Bodies", "CEE108", 1, 1, 2),
+             
+
+                //Enrolled courses in second semester
+                DatabaseSeeder.EnrollCourseSeeder(5,"Engineering Calculus 2", "CEE103", 2, 1, 2),
+                DatabaseSeeder.EnrollCourseSeeder(4,"Thermodyanmics 2", "CEE101", 2, 1, 1),
+                 DatabaseSeeder.EnrollCourseSeeder(6,"Data Structure and Algorithms", "CPE221/L", 2, 1, 2),
+
+                //Enrolled courses in summer
+                DatabaseSeeder.EnrollCourseSeeder(7,"Differential Equation", "CEE104", 3, 1, 2),
+
+                
+            };
+
+            var students = new List<Student>
+            {
+                DatabaseSeeder.StudentSeeder(1,"550200","Cedric Setimo","CedricSetimo.550200@umindanao.edu.ph",3,1,
+                "273F528F-5330-411F-9C6B-01543D6249C3"),
+            };
+
+            var faculty = new List<Faculty>()
+            {
+                DatabaseSeeder.FacultySeeder(1, "321033", "Rey Mateo", 1,"53D8F920-EBEC-4DF3-8C53-21F6D123F0D9"),
+                DatabaseSeeder.FacultySeeder(2, "797132", "Jeanelle Labsan",2,"78B4AF2A-672F-43C5-B819-5F0B407B7187"),
             };
 
 
@@ -89,6 +119,9 @@ namespace Consultation.Infrastructure.Data
             builder.Entity<Department>().HasData(departments);
             builder.Entity<Program>().HasData(program);
             builder.Entity<SchoolYear>().HasData(schoolYears);
+            builder.Entity<EnrolledCourse>().HasData(enrolledCourses);
+            builder.Entity<Student>().HasData(students);
+            builder.Entity<Faculty>().HasData(faculty);
             base.OnModelCreating(builder);
         }
 

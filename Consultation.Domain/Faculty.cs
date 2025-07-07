@@ -17,8 +17,11 @@ namespace Consultation.Domain
   
         public string FacultyName { get; set; }
 
-        public Users Users { get; set; }
- 
+        public virtual Users Users { get; set; }
+
+        [ForeignKey(nameof(Users))]
+        public string UsersID { get; set; }
+
         //This need to be one-to-many
         public List<EnrolledCourse> EnrolledCourses { get; set; }
         
@@ -28,7 +31,10 @@ namespace Consultation.Domain
         public List<ConsultationRequest> ConsultationRequests { get; set; }
      
         //Faculty should have one school year
-        public SchoolYear SchoolYear { get; set; }
+        public virtual SchoolYear SchoolYear { get; set; }
+
+        [ForeignKey(nameof(SchoolYear))]
+        public int SchoolYearID { get; set; }
 
 
     }
