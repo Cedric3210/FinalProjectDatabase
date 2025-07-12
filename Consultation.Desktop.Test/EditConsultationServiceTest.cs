@@ -38,24 +38,25 @@ namespace Consultation.Desktop.Test
         [Test]
         public async Task GetEditConsultation_QueryingConsultation_ConsultationVM()
         {
-            EditConsultationViewModel expected = new EditConsultationViewModel
-            {
-                studentName = "Ellaine Musni",
-                courseCode = "CEE108",
-                studentUMID = "547343",
-                concernDescription = "Requesting help with project scope",
-                startedTime = new TimeOnly(10),
-                Status = Status.Pending
-            };
+            //EditConsultationViewModel expected = new EditConsultationViewModel
+            //{
+            //    studentName = "Ellaine Musni",
+            //    courseCode = "CEE108",
+            //    studentUMID = "547343",
+            //    concernDescription = "Requesting help with project scope",
+            //    startedTime = new TimeOnly(10),
+            //    Status = Status.Pending
+            //};
 
             var result = await _editService.getEditConsultation(2);
 
-            Assert.AreEqual(expected.studentName, result.studentName);
-            Assert.AreEqual(expected.courseCode, result.courseCode);
-            Assert.AreEqual(expected.studentUMID, result.studentUMID);
-            Assert.AreEqual(expected.concernDescription, result.concernDescription);
-            Assert.AreEqual(expected.startedTime, result.startedTime);
-            Assert.AreEqual(expected.Status, result.Status);
+            Assert.That(result.studentName, Is.EqualTo("Ellaine Musni"));
+            Assert.That(result.courseCode, Is.EqualTo("CEE108"));
+            Assert.That(result.studentUMID, Is.EqualTo("547343"));
+            Assert.That(result.concernDescription, Is.EqualTo("Requesting help with project scope"));
+            Assert.That(result.startedTime, Is.EqualTo(new TimeOnly(10, 0, 0)));
+            Assert.That(result.dateSchedule, Is.EqualTo(new DateTime(2025, 7, 15, 0, 0, 0)));
+            Assert.That(result.Status, Is.EqualTo(Status.Pending));
 
         }
     
