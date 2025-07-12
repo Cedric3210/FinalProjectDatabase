@@ -17,6 +17,8 @@ namespace Consultation.Domain
         public string CourseName { get; set; }
         public string CourseCode { get; set; }
 
+        //public string Location { get; set; }
+
         [ForeignKey(nameof(SchoolYearID))]
         public int SchoolYearID { get; set; }
         public virtual SchoolYear SchoolYear { get; set; }

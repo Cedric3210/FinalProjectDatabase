@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Consultation.BackEndCRUD.Repository;
 using Consultation.BackEndCRUD.Repository.IRepository;
+using Consultation.BackEndCRUD.Service.IService;
 using Consultation.Domain;
 using Consultation.Infrastructure.Data;
 using Microsoft.AspNet.Identity;
@@ -14,9 +15,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace Consultation.BackEndCRUD.Service
 {
-    public class AuthService
+    public class AuthService : IAuthService
     {
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
         private readonly PasswordHasher<Users> _passwordHasher;
        
         //public AuthService(UserRepository userRepository)
@@ -31,9 +32,9 @@ namespace Consultation.BackEndCRUD.Service
             _userRepository = new UserRepository(context);
         }
 
-        public Users? Login(string email, string password)
+        public async Task<Users?> Login(string email, string password)
         {
-            var user = _userRepository.GetUserByEmail(email);
+            var user = await _userRepository.GetUserByEmail(email);
             if (user == null)
                 return null;
 

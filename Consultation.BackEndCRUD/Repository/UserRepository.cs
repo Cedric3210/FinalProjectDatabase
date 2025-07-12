@@ -1,6 +1,7 @@
 ﻿using Consultation.BackEndCRUD.Repository.IRepository;
 using Consultation.Domain;
 using Consultation.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace Consultation.BackEndCRUD.Repository
 
         public UserRepository(AppDbContext context) => _context = context;
 
-        public Users? GetUserByEmail(string email)
+        public async Task<Users?> GetUserByEmail(string email)
         {
-            return _context.Users.FirstOrDefault(u => u.Email == email);
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
     }
 }
